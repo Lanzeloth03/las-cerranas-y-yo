@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="64d33aef-dac6-4305-b487-22d94e92f35c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="11"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FFFAF0">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFEABF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="New Dataset 1" uuid="764d0f97-a39a-4d09-9e20-bf5b46c4fe92">
+		<queryString language="SQL">
+			<![CDATA[select * from venta]]>
+		</queryString>
+		<field name="id_venta" class="java.lang.Object"/>
+		<field name="preciobase" class="java.lang.Object"/>
+		<field name="igv" class="java.lang.Object"/>
+		<field name="preciototal" class="java.lang.Object"/>
+		<field name="dniruc" class="java.lang.Object"/>
+		<group name="dniruc">
+			<groupExpression><![CDATA[$F{dniruc}]]></groupExpression>
+		</group>
+		<group name="preciobase">
+			<groupExpression><![CDATA[$F{preciobase}]]></groupExpression>
+		</group>
+		<group name="igv">
+			<groupExpression><![CDATA[$F{igv}]]></groupExpression>
+		</group>
+		<group name="preciototal">
+			<groupExpression><![CDATA[$F{preciototal}]]></groupExpression>
+		</group>
+	</subDataset>
+	<queryString>
+		<![CDATA[select * from venta]]>
+	</queryString>
+	<field name="id_venta" class="java.lang.Object"/>
+	<field name="preciobase" class="java.lang.Object"/>
+	<field name="igv" class="java.lang.Object"/>
+	<field name="preciototal" class="java.lang.Object"/>
+	<field name="dniruc" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="21" y="11" width="173" height="68" uuid="af97941d-4f1e-4736-a5d9-cb538dc1d29e"/>
+				<imageExpression><![CDATA["D:\\error2022\\heladeria\\jasper\\ooo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="255" y="28" width="158" height="20" uuid="34d47f79-57a7-46d8-ad09-c231f189e7df"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Reporte de Ventas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="61" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="44" y="2" width="100" height="20" uuid="76569043-4247-487a-9c4a-f334b3de946d"/>
+				<text><![CDATA[DNI/RUC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="2" width="100" height="20" uuid="01703779-774f-4f9d-924b-420d58c46f73"/>
+				<text><![CDATA[IGV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="2" width="100" height="20" uuid="8921b7de-1346-43dd-9992-f727485f33fd"/>
+				<text><![CDATA[Precio Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="168" y="2" width="100" height="20" uuid="b0a6025c-9116-40cb-81c5-6f28f605f1c9"/>
+				<text><![CDATA[Precio Base]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="44" y="4" width="100" height="20" uuid="9ac8c4fb-a6b5-4910-80ca-68c797ac8252"/>
+				<textFieldExpression><![CDATA[""+$F{dniruc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="282" y="4" width="100" height="20" uuid="51497c56-8ab1-402b-bffb-6d2c9f00db72"/>
+				<textFieldExpression><![CDATA[""+$F{igv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="403" y="4" width="100" height="20" uuid="9b235c38-3e4f-4d16-9a23-249c9a8a2001"/>
+				<textFieldExpression><![CDATA[""+$F{preciototal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="168" y="4" width="100" height="20" uuid="a9d4c25b-7e04-43ff-bdc4-bb2747dbce24"/>
+				<textFieldExpression><![CDATA[""+$F{preciobase}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
